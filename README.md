@@ -62,9 +62,10 @@ http://127.0.0.1:8000/
 
 ## Equipe
 
-- **Nome da equipe**: ______________________
-- **Tech Leader**: ______________________
-- **Dev1**: ______________________
-- **Dev2**: ______________________
-- **Dev3**: ______________________
+- **Nome da equipe**: EQUIPE 01
+- **Tech Leader**: CASSIUS MARCELO
+- **Dev1**: DARIO ALEF
+- **Dev2**: ELLEN SANTANA
+- **Dev3**: LAIS CARVALHO
+- **Dev4**: VALERIA RODRIGUES
 
