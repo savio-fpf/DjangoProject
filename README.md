@@ -62,9 +62,9 @@ http://127.0.0.1:8000/
 
 ## Equipe
 
-- **Nome da equipe**: ______________________
-- **Tech Leader**: ______________________
-- **Dev1**: ______________________
-- **Dev2**: ______________________
-- **Dev3**: ______________________
+- **Nome da equipe**: lifeAI
+- **Tech Leader**: João Sampaio
+- **Dev1**: Guilherme Silva
+- **Dev2**: Gustavo Santos
+- **Dev3**: Hamilton
 
