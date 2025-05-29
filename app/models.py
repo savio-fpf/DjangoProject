@@ -6,3 +6,9 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
+
+class Category(models.Model):
+    categoria = models.CharField(max_length=32)
+    
+    def __str__(self):
+        return self.categoria
