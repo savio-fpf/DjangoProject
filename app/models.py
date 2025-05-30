@@ -31,4 +31,4 @@ class Publisher(models.Model):
     id_autor = models.ForeignKey(Author, on_delete=models.CASCADE) 
 
     def __str__(self):
-        return self.livro
+        return f'{self.livro} | {self.ano}'
