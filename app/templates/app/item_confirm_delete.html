@@ -1,13 +1,31 @@
-<h1>Confirm Delete</h1>
-
-<form method="post">{% csrf_token %}<p>Delete '{{ item }}'?</p>
+<h1>Confirm Delete - Item</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Delete '{{ item }}'?</p>
     <button type="submit">Yes</button>
     <a href="{% url 'item_list' %}">Cancel</a>
 </form>
 
-<h1>Confirm Delete Autor</h1>
-
-<form method="post">{% csrf_token %}<p>Delete '{{ autor }}'?</p>
+<h1>Confirm Delete - Author</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Delete '{{ author }}'?</p>
     <button type="submit">Yes</button>
-    <a href="{% url 'autor_list' %}">Cancel</a>
+    <a href="{% url 'item_list' %}">Cancel</a>
+</form>
+
+<h1>Confirm Delete - Category</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Delete '{{ category }}'?</p>
+    <button type="submit">Yes</button>
+    <a href="{% url 'item_list' %}">Cancel</a>
+</form>
+
+<h1>Confirm Delete - Publisher</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Delete '{{ publisher }}'?</p>
+    <button type="submit">Yes</button>
+    <a href="{% url 'item_list' %}">Cancel</a>
 </form>

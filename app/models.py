@@ -21,14 +21,14 @@ class Author(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return f'{self.name} | {self.description}'
+        return self.name
 
 
 class Publisher(models.Model):
     livro = models.CharField(max_length=50)
-    ano = models.DateField()
+    ano = models.IntegerField()
     description = models.TextField()
     id_autor = models.ForeignKey(Author, on_delete=models.CASCADE) 
 
     def __str__(self):
-        return f'{self.livro} | {self.ano} | {self.description} | {self.id_autor}'
+        return self.livro
