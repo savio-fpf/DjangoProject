@@ -1,1 +1,27 @@
-<h1>Item Form</h1><form method="post">{% csrf_token %}{{ form.as_p }}<button type="submit">Save</button></form>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário de Item</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; padding: 40px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+        form { display: flex; flex-direction: column; }
+        label { margin-bottom: 5px; color: #555; }
+        input, select, textarea { margin-bottom: 15px; padding: 8px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Item</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+</body>
+</html>

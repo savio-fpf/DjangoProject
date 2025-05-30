@@ -1,1 +1,37 @@
-<h1>Categorys</h1><ul>{% for category in categorys %}<li>{{ category.name }} - <a href="{% url 'category_update' category.pk %}">Edit</a> - <a href="{% url 'category_delete' category.pk %}">Delete</a></li>{% endfor %}</ul><a href="{% url 'category_create' %}">New Category</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Categorias</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; padding: 40px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 12px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .actions a { margin-left: 10px; color: #007bff; text-decoration: none; }
+        .actions a:hover { text-decoration: underline; }
+        .new-category { display: inline-block; margin-top: 20px; padding: 10px 16px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+        .new-category:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📁 Lista de Categorias</h1>
+        <ul>
+            {% for category in categories %}
+                <li>
+                    {{ category.name }}
+                    <span class="actions">
+                        <a href="{% url 'category_update' category.pk %}">Editar</a>
+                        <a href="{% url 'category_delete' category.pk %}">Excluir</a>
+                    </span>
+                </li>
+            {% empty %}
+                <li>Nenhuma categoria cadastrada.</li>
+            {% endfor %}
+        </ul>
+        <a class="new-category" href="{% url 'category_create' %}">+ Nova Categoria</a>
+    </div>
+</body>
+</html>
