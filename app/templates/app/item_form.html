@@ -1,27 +1,27 @@
-<h1>Item Form</h1>
+<h1>Item Form Edit</h1>
 <form method="post">
     {% csrf_token %}
-    {{ item_form.as_p }}
+    {{ form.as_p }}
     <button type="submit" name="submit_item">Save</button>
 </form>
 
-<h1>Author Form</h1>
+<h1>Author Form Edit</h1>
 <form method="post">
     {% csrf_token %}
-    {{ author_form.as_p }}
+    {{ form.as_p }}
     <button type="submit" name="submit_author">Save</button>
 </form>
 
-<h1>Category Form</h1>
+<h1>Category Form Edit</h1>
 <form method="post">
     {% csrf_token %}
-    {{ category_form.as_p }}
+    {{ form.as_p }}
     <button type="submit" name="submit_category">Save</button>
 </form>
 
-<h1>Publisher Form</h1>
+<h1>Publisher Form Edit</h1>
 <form method="post">
     {% csrf_token %}
-    {{ publisher_form.as_p }}
+    {{ form.as_p }}
     <button type="submit" name="submit_publisher">Save</button>
 </form>

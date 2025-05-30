@@ -9,9 +9,9 @@
 <h1>Confirm Delete - Author</h1>
 <form method="post">
     {% csrf_token %}
-    <p>Delete '{{ autor }}'?</p>
+    <p>Delete '{{ author }}'?</p>
     <button type="submit">Yes</button>
-    <a href="{% url 'autor_list' %}">Cancel</a>
+    <a href="{% url 'item_list' %}">Cancel</a>
 </form>
 
 <h1>Confirm Delete - Category</h1>
@@ -19,7 +19,7 @@
     {% csrf_token %}
     <p>Delete '{{ category }}'?</p>
     <button type="submit">Yes</button>
-    <a href="{% url 'category_list' %}">Cancel</a>
+    <a href="{% url 'item_list' %}">Cancel</a>
 </form>
 
 <h1>Confirm Delete - Publisher</h1>
@@ -27,5 +27,5 @@
     {% csrf_token %}
     <p>Delete '{{ publisher }}'?</p>
     <button type="submit">Yes</button>
-    <a href="{% url 'publisher_list' %}">Cancel</a>
+    <a href="{% url 'item_list' %}">Cancel</a>
 </form>

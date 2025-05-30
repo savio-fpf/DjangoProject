@@ -1,7 +1,11 @@
 <h1>Items</h1>
 <ul>
   {% for item in items %}
-    <li>{{ item.name }}</li>
+    <li>
+        {{ item.name }}
+        <a href="{% url 'item_update' item.pk %}">Edit</a> - <a href="{% url 'item_delete' item.pk %}">Delete</a>
+    </li>
+    
   {% empty %}
     <li>No items found.</li>
   {% endfor %}
@@ -19,7 +23,11 @@
 <h1>Authors</h1>
 <ul>
   {% for author in authors %}
-    <li>{{ author.name }}</li>
+    <li>
+        {{ author.name }}
+        <a href="{% url 'author_update' author.pk %}">Edit</a> - <a href="{% url 'author_delete' author.pk %}">Delete</a>
+    </li>
+    
   {% empty %}
     <li>No authors found.</li>
   {% endfor %}
@@ -37,7 +45,10 @@
 <h1>Categories</h1>
 <ul>
   {% for category in categories %}
-    <li>{{ category.categoria }}</li>
+    <li>
+        {{ category.categoria }}
+        <a href="{% url 'category_update' category.pk %}">Edit</a> - <a href="{% url 'category_delete' category.pk %}">Delete</a>
+    </li>
   {% empty %}
     <li>No categories found.</li>
   {% endfor %}

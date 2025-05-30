@@ -114,7 +114,7 @@ def author_update(request, pk):
             return redirect('item_list')
     else:
         form = AuthorForm(instance=author)
-    return render(request, 'app/author_form.html', {'form': form})
+    return render(request, 'app/item_form.html', {'form': form})
 
 def category_update(request, pk):
     category = get_object_or_404(Category, pk=pk)
@@ -125,7 +125,7 @@ def category_update(request, pk):
             return redirect('item_list')
     else:
         form = CategoryForm(instance=category)
-    return render(request, 'app/category_form.html', {'form': form})
+    return render(request, 'app/item_form.html', {'form': form})
 
 def publisher_update(request, pk):
     publisher = get_object_or_404(Publisher, pk=pk)
@@ -136,7 +136,7 @@ def publisher_update(request, pk):
             return redirect('item_list')
     else:
         form = PublisherForm(instance=publisher)
-    return render(request, 'app/publisher_form.html', {'form': form})
+    return render(request, 'app/item_form.html', {'form': form})
 
 # DELETE VIEWS
 
@@ -152,18 +152,18 @@ def author_delete(request, pk):
     if request.method == 'POST':
         author.delete()
         return redirect('item_list')
-    return render(request, 'app/author_confirm_delete.html', {'author': author})
+    return render(request, 'app/item_confirm_delete.html', {'author': author})
 
 def category_delete(request, pk):
     category = get_object_or_404(Category, pk=pk)
     if request.method == 'POST':
         category.delete()
         return redirect('item_list')
-    return render(request, 'app/category_confirm_delete.html', {'category': category})
+    return render(request, 'app/item_confirm_delete.html', {'category': category})
 
 def publisher_delete(request, pk):
     publisher = get_object_or_404(Publisher, pk=pk)
     if request.method == 'POST':
         publisher.delete()
         return redirect('item_list')
-    return render(request, 'app/publisher_confirm_delete.html', {'publisher': publisher})
+    return render(request, 'app/item_confirm_delete.html', {'publisher': publisher})

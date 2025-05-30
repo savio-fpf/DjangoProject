@@ -21,7 +21,7 @@ class Author(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return f'{self.name} | {self.description}'
+        return self.name
 
 
 class Publisher(models.Model):
@@ -31,4 +31,4 @@ class Publisher(models.Model):
     id_autor = models.ForeignKey(Author, on_delete=models.CASCADE) 
 
     def __str__(self):
-        return f'{self.livro} | {self.ano} | {self.description} | {self.id_autor}'
+        return self.livro
