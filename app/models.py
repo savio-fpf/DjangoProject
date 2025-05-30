@@ -16,20 +16,19 @@ class Category(models.Model):
         return self.categoria
 
 
-class Author(model.Model):
-    id = models.AutoField(primary_key=id, auto_created=True)
+class Author(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
 
     def __str__(self):
-        return (f'{self.name} | {self.description}')
+        return f'{self.name} | {self.description}'
 
 
-class Publisher(model.Model):
-    livro = model.models.CharField(max_length=50)
+class Publisher(models.Model):
+    livro = models.CharField(max_length=50)
     ano = models.DateField()
     description = models.TextField()
-    id_autor = models.ForeignKey(Author.id)
+    id_autor = models.ForeignKey(Author, on_delete=models.CASCADE) 
 
     def __str__(self):
-        return (f'{self.livro} | {self.ano} | {self.description} |  {self.id_autor}')
+        return f'{self.livro} | {self.ano} | {self.description} | {self.id_autor}'
