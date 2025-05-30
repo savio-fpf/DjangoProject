@@ -37,7 +37,7 @@
 <h1>Categories</h1>
 <ul>
   {% for category in categories %}
-    <li>{{ category.name }}</li>
+    <li>{{ category.categoria }}</li>
   {% empty %}
     <li>No categories found.</li>
   {% endfor %}
@@ -47,7 +47,7 @@
 <form method="post">
   {% csrf_token %}
   {{ category_form.as_p }}
-  <button type="submit" name="submit_category">Add Category</button>
+  <button type="submit" name="submit_category">Add Category</button> 
 </form>
 
 <hr>
@@ -55,7 +55,7 @@
 <h1>Publishers</h1>
 <ul>
   {% for publisher in publishers %}
-    <li>{{ publisher.name }}</li>
+    <li>{{ publisher.livro }}</li>
   {% empty %}
     <li>No publishers found.</li>
   {% endfor %}
@@ -67,3 +67,8 @@
   {{ publisher_form.as_p }}
   <button type="submit" name="submit_publisher">Add Publisher</button>
 </form>
+
+{{ item_form.errors }}
+{{ author_form.errors }}
+{{ category_form.errors }}
+{{ publisher_form.errors }}

@@ -26,7 +26,7 @@ class Author(models.Model):
 
 class Publisher(models.Model):
     livro = models.CharField(max_length=50)
-    ano = models.DateField()
+    ano = models.IntegerField()
     description = models.TextField()
     id_autor = models.ForeignKey(Author, on_delete=models.CASCADE) 
 
