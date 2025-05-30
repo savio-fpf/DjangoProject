@@ -4,3 +4,10 @@
     <button type="submit">Yes</button>
     <a href="{% url 'item_list' %}">Cancel</a>
 </form>
+
+<h1>Confirm Delete Autor</h1>
+
+<form method="post">{% csrf_token %}<p>Delete '{{ autor }}'?</p>
+    <button type="submit">Yes</button>
+    <a href="{% url 'autor_list' %}">Cancel</a>
+</form>

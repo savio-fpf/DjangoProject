@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Item
-from .forms import ItemForm
+from .models import Item, Author
+from .forms import ItemForm, AuthorForm
 
 def item_list(request):
     items = Item.objects.all()
@@ -33,3 +33,37 @@ def item_delete(request, pk):
         item.delete()
         return redirect('item_list')
     return render(request, 'app/item_confirm_delete.html', {'item': item})
+
+# ============================================ CRUD Author
+
+def autor_list(request):
+    autor = Author.objects.all()
+    return render(request, 'app/item_list.html', {'autor': autor})
+
+def autor_create(request):
+    if request.method == 'POST':
+        form = AuthorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('item_list')
+    else:
+        form = AuthorForm()
+    return render(request, 'app/item_form.html', {'autor': autor})
+
+def autor_update(request, pk):
+    autor = get_object_or_404(Item, pk=pk)
+    if request.method == 'POST':
+        form = AuthorForm(request.POST, instance=autor)
+        if form.is_valid():
+            form.save()
+            return redirect('item_list')
+    else:
+        form = AuthorForm(instance=autor)
+    return render(request, 'app/item_form.html', {'autor': autor})
+
+def autor_delete(request, pk):
+    autor = get_object_or_404(Author, pk=pk)
+    if request.method == 'POST':
+        autor.delete()
+        return redirect('item_list')
+    return render(request, 'app/item_confirm_delete.html', {'autor': autor})
