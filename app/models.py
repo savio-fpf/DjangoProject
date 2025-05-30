@@ -16,6 +16,7 @@ class Category(models.Model):
         return self.categoria
 
 
+
 class Author(model.Model):
     id = models.AutoField(primary_key=id)
     name = models.CharField(max_length=100)
