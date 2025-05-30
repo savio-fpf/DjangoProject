@@ -2,7 +2,7 @@
 <ul>
   {% for item in items %}
     <li>
-        {{ item.name }}
+        {{ item.name }} -
         <a href="{% url 'item_update' item.pk %}">Edit</a> - <a href="{% url 'item_delete' item.pk %}">Delete</a>
     </li>
     
@@ -24,7 +24,7 @@
 <ul>
   {% for author in authors %}
     <li>
-        {{ author.name }}
+        {{ author.name }} -
         <a href="{% url 'author_update' author.pk %}">Edit</a> - <a href="{% url 'author_delete' author.pk %}">Delete</a>
     </li>
     
@@ -46,7 +46,7 @@
 <ul>
   {% for category in categories %}
     <li>
-        {{ category.categoria }}
+        {{ category.categoria }} -
         <a href="{% url 'category_update' category.pk %}">Edit</a> - <a href="{% url 'category_delete' category.pk %}">Delete</a>
     </li>
   {% empty %}
@@ -66,7 +66,10 @@
 <h1>Publishers</h1>
 <ul>
   {% for publisher in publishers %}
-    <li>{{ publisher.livro }}</li>
+    <li>
+      {{ publisher.livro }}, {{ publisher.ano }} -
+      <a href="{% url 'publisher_update' publisher.pk %}">Edit</a> - <a href="{% url 'publisher_delete' publisher.pk %}">Delete</a>
+    </li>
   {% empty %}
     <li>No publishers found.</li>
   {% endfor %}
