@@ -1,15 +1,69 @@
 <h1>Items</h1>
-<ul>{% for item in items %}
-    <li>
-        {{ item.name }} -<a href="{% url 'item_update' item.pk %}">Edit</a> - <a href="{% url 'item_delete' item.pk %}">Delete</a>
-    </li>{% endfor %}
+<ul>
+  {% for item in items %}
+    <li>{{ item.name }}</li>
+  {% empty %}
+    <li>No items found.</li>
+  {% endfor %}
 </ul>
-    <a href="{% url 'item_create' %}">New Item</a>
 
-<h1>Autor</h1>
-<ul>{% for autor in autor %}
-    <li>
-        {{ autor.pk }} -<a href="{% url 'autor_update' autor.pk %}">Edit</a> - <a href="{% url 'autor_delete' autor.pk %}">Delete</a>
-    </li>{% endfor %}
+<h2>New Item</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ item_form.as_p }}
+  <button type="submit" name="submit_item">Add Item</button>
+</form>
+
+<hr>
+
+<h1>Authors</h1>
+<ul>
+  {% for author in authors %}
+    <li>{{ author.name }}</li>
+  {% empty %}
+    <li>No authors found.</li>
+  {% endfor %}
 </ul>
-    <a href="{% url 'autor_create' %}">New Item</a>
+
+<h2>New Author</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ author_form.as_p }}
+  <button type="submit" name="submit_author">Add Author</button>
+</form>
+
+<hr>
+
+<h1>Categories</h1>
+<ul>
+  {% for category in categories %}
+    <li>{{ category.name }}</li>
+  {% empty %}
+    <li>No categories found.</li>
+  {% endfor %}
+</ul>
+
+<h2>New Category</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ category_form.as_p }}
+  <button type="submit" name="submit_category">Add Category</button>
+</form>
+
+<hr>
+
+<h1>Publishers</h1>
+<ul>
+  {% for publisher in publishers %}
+    <li>{{ publisher.name }}</li>
+  {% empty %}
+    <li>No publishers found.</li>
+  {% endfor %}
+</ul>
+
+<h2>New Publisher</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ publisher_form.as_p }}
+  <button type="submit" name="submit_publisher">Add Publisher</button>
+</form>
