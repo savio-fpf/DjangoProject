@@ -10,3 +10,8 @@ class CategoryForm(forms.ModelForm):
     class Meta:
         model = models.Category
         fields = ['categoria']
+
+class AuthorForm(forms.ModelForm):
+    class Meta:
+        model = models.Author
+        fields = ['name', 'description']
