@@ -62,8 +62,8 @@ http://127.0.0.1:8000/
 
 ## Equipe
 
-- *Nome da equipe*: LifeAI
-- *Tech Leader*: João
-- *Dev1*: Guilherme
-- *Dev2*: Gustavo
-- *Dev3*: Amilton
+- *Nome da equipe*: BooksTeam
+- *Tech Leader*: João Sampaio
+- *Dev1*: Guilherme da Silva
+- *Dev2*: Gustavo Fernandes
+- *Dev3*: Hamilton Santos
