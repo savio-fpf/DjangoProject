@@ -1,0 +1,7 @@
+<h1>Confirm Delete</h1>
+<form method="post">
+    {% csrf_token %}
+    <p>Delete '{{ publisher }}'?</p>
+    <button type="submit">Yes</button>
+    <a href="{% url 'publisher_list' %}">Cancel</a>
+</form>
