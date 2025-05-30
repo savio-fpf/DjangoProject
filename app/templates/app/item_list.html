@@ -1,1 +1,13 @@
-<h1>Items</h1><ul>{% for item in items %}<li>{{ item.name }} - <a href="{% url 'item_update' item.pk %}">Edit</a> - <a href="{% url 'item_delete' item.pk %}">Delete</a></li>{% endfor %}</ul><a href="{% url 'item_create' %}">New Item</a>
+<!-- Esse 'header' improvisado leva à página principal de cada modelo (onde poderemos fazer Crud)-->
+<p><a href="/item">Item</a><a href="/categoria">Categoria</a><a href="/autor">Autor</a><a href="/editora">Editora</a></p>
+<br>
+<h1>Items</h1>
+<ul>
+  {% for item in items %}
+  <li>
+    {{ item.name }} - <a href="{% url 'item_update' item.pk %}">Edit</a> -
+    <a href="{% url 'item_delete' item.pk %}">Delete</a>
+  </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'item_create' %}">New Item</a>
