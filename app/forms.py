@@ -15,3 +15,8 @@ class AuthorForm(forms.ModelForm):
     class Meta:
         model = models.Author
         fields = ['name', 'description']
+
+class PublisherForm(forms.ModelForm):
+    class Meta:
+        model = models.Author
+        fields = ['livro', 'ano', 'description']
