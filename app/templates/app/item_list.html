@@ -1,1 +1,44 @@
-<h1>Items</h1><ul>{% for item in items %}<li>{{ item.name }} - <a href="{% url 'item_update' item.pk %}">Edit</a> - <a href="{% url 'item_delete' item.pk %}">Delete</a></li>{% endfor %}</ul><a href="{% url 'item_create' %}">New Item</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Itens</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; padding: 40px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .top-links { text-align: right; margin-bottom: 15px; }
+        .top-links a { color: #007bff; text-decoration: none; font-size: 14px; }
+        .top-links a:hover { text-decoration: underline; }
+
+        ul { list-style: none; padding: 0; }
+        li { padding: 12px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .actions a { margin-left: 10px; color: #007bff; text-decoration: none; }
+        .actions a:hover { text-decoration: underline; }
+        .new-item { display: inline-block; margin-top: 20px; padding: 10px 16px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+        .new-item:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-links">
+            <a href="{% url 'category_list' %}">Ver Categorias</a>
+        </div>
+        <h1>📋 Lista de Itens</h1>
+        <ul>
+            {% for item in items %}
+                <li>
+                    {{ item.name }}
+                    <span class="actions">
+                        <a href="{% url 'item_update' item.pk %}">Editar</a>
+                        <a href="{% url 'item_delete' item.pk %}">Excluir</a>
+                    </span>
+                </li>
+            {% empty %}
+                <li>Nenhum item cadastrado.</li>
+            {% endfor %}
+        </ul>
+        <a class="new-item" href="{% url 'item_create' %}">+ Novo Item</a>
+    </div>
+</body>
+</html>

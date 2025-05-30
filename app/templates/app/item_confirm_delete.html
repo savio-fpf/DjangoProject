@@ -1,1 +1,29 @@
-<h1>Confirm Delete</h1><form method="post">{% csrf_token %}<p>Delete '{{ item }}'?</p><button type="submit">Yes</button><a href="{% url 'item_list' %}">Cancel</a></form>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmação de Exclusão</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; padding: 40px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: #333; margin-bottom: 20px; }
+        p { margin-bottom: 30px; }
+        button, a { padding: 10px 20px; margin: 5px; text-decoration: none; border-radius: 5px; }
+        button { background-color: #dc3545; color: white; border: none; }
+        button:hover { background-color: #c82333; }
+        a { background-color: #6c757d; color: white; }
+        a:hover { background-color: #5a6268; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚠️ Confirmar Exclusão</h1>
+        <p>Você tem certeza que deseja excluir <strong>"{{ item.name }}"</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Sim, excluir</button>
+            <a href="{% url 'item_list' %}">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>
