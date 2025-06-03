@@ -1,0 +1,38 @@
+name: Deploy to Production
+
+# Dispara para Pull Requests only main
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1) Faz checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run migrations
+        run: |
+          python manage.py migrate
+          
+      - name: Deploy to production
+        run: |
+              # Comando para deploy, por exemplo, copiar arquivos para servidor remoto
+              echo "Deploying to production server..."
+              # Exemplo: scp -r . user@server:/path/to/deploy
+              echo "Deploy completed successfully!"
+    
