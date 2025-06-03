@@ -1,6 +1,7 @@
-./db.sqlite3
+db.sqlite3
 ./__pycache__/
 ./.idea
 .venv
 ./.venv
 .__pycache__
+app/tests/__pycache__/
